@@ -152,7 +152,7 @@ if __name__ == '__main__':
     #out = Flatten()(topModel.output)
     out = Dense(20,activation=params['activation_function'],
                 kernel_initializer=initializer(seed=random_seed),
-                use_bias=True,kernel_regularizer=l2(params['l2_reg_dense']))(out)
+                use_bias=True,kernel_regularizer=l2(params['l2_reg_dense']))(topModel.output)
     out = Dropout(rate=params['dropout_rate_dense'], seed=random_seed)(out)
     out = Dense(2, activation='softmax')(out)
     model = Model(inputs=topModel.input, outputs=out)
