@@ -19,7 +19,7 @@ from keras.callbacks import TensorBoard, Callback, ReduceLROnPlateau
 from keras.callbacks import LearningRateScheduler, ModelCheckpoint, CSVLogger
 import seaborn as sns
 sns.set()
-from modules import heartnetTop
+from modules import heartnetTop, heartatten
 from keras.models import Model
 from keras.regularizers import l2
 from keras.optimizers import Adam as optimizer
@@ -147,7 +147,8 @@ if __name__ == '__main__':
     train_subset = np.asarray([each[0] for each in train_files])
     val_subset = np.asarray([each[0] for each in val_files])
 
-    topModel = heartnetTop(**params)
+    #topModel = heartnetTop(**params)
+    topModel = heartatten()
     out = Flatten()(topModel.output)
     out = Dense(20,activation=params['activation_function'],
                 kernel_initializer=initializer(seed=random_seed),
