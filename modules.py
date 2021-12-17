@@ -54,7 +54,7 @@ def heartnetTop(activation_function='relu', bn_momentum=0.99, bias=False, dropou
 
     input = Input(shape=(2500, 1))
 
-    coeff_path = os.path.join('..','data','filterbankInit','filterbankcoeff60.mat')
+    coeff_path = os.path.join('/content/drive/MyDrive/Studies/BioMed Lab Project','data','filterbankInit','filterbankcoeff60.mat')
     b1,b2,b3,b4 = loadFIRparams(coeff_path)
 
     if type(FIR_type) == str and FIR_type == 'gamma':
