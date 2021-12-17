@@ -15,16 +15,16 @@ from tensorflow import set_random_seed
 set_random_seed(1)
 from datetime import datetime
 import argparse
-from keras.callbacks import TensorBoard, Callback, ReduceLROnPlateau
-from keras.callbacks import LearningRateScheduler, ModelCheckpoint, CSVLogger
+from tensorflow.keras.callbacks import TensorBoard, Callback, ReduceLROnPlateau
+from tensorflow.keras.callbacks import LearningRateScheduler, ModelCheckpoint, CSVLogger
 import seaborn as sns
 sns.set()
 from modules import heartnetTop
-from keras.models import Model
-from keras.regularizers import l2
-from keras.optimizers import Adam as optimizer
-from keras.layers import Dense,Flatten,Dropout
-from keras.initializers import he_normal as initializer
+from tensorflow.keras.models import Model
+from tensorflow.keras.regularizers import l2
+from tensorflow.keras.optimizers import Adam as optimizer
+from tensorflow.keras.layers import Dense,Flatten,Dropout
+from tensorflow.keras.initializers import he_normal as initializer
 from utils import load_data, sessionLog, log_metrics
 
 if __name__ == '__main__':

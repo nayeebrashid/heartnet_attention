@@ -1,14 +1,14 @@
 import os
-from keras.layers import Input, Conv1D, MaxPooling1D, Dropout, Activation
-from keras import initializers
-from keras.layers.normalization import BatchNormalization
-from keras.layers.merge import Concatenate
-from keras.regularizers import l2
-from keras.constraints import max_norm
-from keras.models import Model
+from tensorflow.keras.layers import Input, Conv1D, MaxPooling1D, Dropout, Activation
+from tensorflow.keras import initializers
+from tensorflow.keras.layers.normalization import BatchNormalization
+from tensorflow.keras.layers.merge import Concatenate
+from tensorflow.keras.regularizers import l2
+from tensorflow.keras.constraints import max_norm
+from tensorflow.keras.models import Model
 from learnableFilterbanks import Conv1D_zerophase,Conv1D_gammatone, Conv1D_linearphaseType
 from utils import loadFIRparams
-from keras.initializers import he_normal as initializer
+from tensorflow.keras.initializers import he_normal as initializer
 
 
 def branch(input_tensor,num_filt,kernel_size,random_seed,padding,bias,maxnorm,l2_reg,
