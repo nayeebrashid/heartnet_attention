@@ -149,7 +149,7 @@ if __name__ == '__main__':
 
     #topModel = heartnetTop(**params)
     topModel = heartatten()
-    out = Flatten()(topModel.output)
+    #out = Flatten()(topModel.output)
     out = Dense(20,activation=params['activation_function'],
                 kernel_initializer=initializer(seed=random_seed),
                 use_bias=True,kernel_regularizer=l2(params['l2_reg_dense']))(out)
