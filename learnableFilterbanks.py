@@ -4,7 +4,7 @@ from keras.engine.topology import Layer
 from keras.engine.topology import InputSpec
 import tensorflow as tf
 from keras.utils import conv_utils
-from keras.layers import activations, initializers, regularizers, constraints
+from keras import activations, initializers, regularizers, constraints
 import numpy as np
 import warnings
 # from scipy.fftpack import dct
