@@ -1,5 +1,5 @@
 import os
-from keras.layers import Input, Conv1D, MaxPooling1D, Dropout, Activation, LSTM
+from keras.layers import Input, Conv1D, MaxPooling1D, Dropout, Activation, LSTM, Flatten
 from keras import initializers
 from keras.layers.normalization import BatchNormalization
 from keras.layers.merge import Concatenate
