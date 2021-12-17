@@ -11,8 +11,8 @@ import os
 from collections import Counter
 import numpy as np
 np.random.seed(1)
-from tensorflow import set_random_seed
-set_random_seed(1)
+#from tensorflow import set_random_seed
+import tensorflow
 from datetime import datetime
 import argparse
 from tensorflow.keras.callbacks import TensorBoard, Callback, ReduceLROnPlateau
@@ -26,6 +26,7 @@ from tensorflow.keras.optimizers import Adam as optimizer
 from tensorflow.keras.layers import Dense,Flatten,Dropout
 from tensorflow.keras.initializers import he_normal as initializer
 from utils import load_data, sessionLog, log_metrics
+tensorflow.random.set_seed(1)
 
 if __name__ == '__main__':
 
