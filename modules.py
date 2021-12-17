@@ -146,7 +146,7 @@ def heartatten():
     output = Concatenate(axis=-1)([x1, x2])
 
     x3 = Dense(64, activation='relu')(output)
-    x3 = Dense(64, activation='sigmoid')(x3)
+    x3 = Dense(128, activation='sigmoid')(x3)
 
     output = Multiply()([output, x3])
 
