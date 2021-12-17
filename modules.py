@@ -1,5 +1,5 @@
 import os
-from keras.layers import Input, Conv1D, MaxPooling1D, Dropout, Activation, LSTM, Flatten
+from keras.layers import Input, Conv1D, MaxPooling1D, Dropout, Activation, LSTM, Flatten, Multiply, Dense
 from keras import initializers
 from keras.layers.normalization import BatchNormalization
 from keras.layers.merge import Concatenate
@@ -139,10 +139,17 @@ def heartatten():
     x1 = MaxPooling1D(pool_size=2)(x1)
 
     x1 = Flatten()(x1)
+    x1 = Dense(64, activation='relu')(x1)
 
     x2 = LSTM(units=64)(input)
 
     output = Concatenate(axis=-1)([x1, x2])
+
+    x3 = Dense(64, activation='relu')(output)
+    x3 = Dense(64, activation='sigmoid')(x3)
+
+    output = Multiply()([output, x3])
+
 
     model = Model(input,output)
     return model

@@ -105,14 +105,14 @@ if __name__ == '__main__':
 
     #########################################################
 
-    model_dir = os.path.join('..','models')
+    model_dir = os.path.join('/content/drive/MyDrive/Studies/BioMed Lab Project','models')
     data_dir = os.path.join('/content/drive/MyDrive/Studies/BioMed Lab Project','data','feature','folds')
     log_name = HS + ' ' + str(datetime.now()).replace(':','-')
-    log_dir = os.path.join('..','logs')
+    log_dir = os.path.join('/content/drive/MyDrive/Studies/BioMed Lab Project','logs')
     if not os.path.exists(os.path.join(model_dir,log_name)):
         os.makedirs(os.path.join(model_dir,log_name))
     checkpoint_name = os.path.join(model_dir,log_name,'weights.{epoch:04d}-{val_acc:.4f}.hdf5')
-    results_path = os.path.join('..','logs','resultsLog.csv')
+    results_path = os.path.join('/content/drive/MyDrive/Studies/BioMed Lab Project','logs','resultsLog.csv')
 
     ### Init Params
 
