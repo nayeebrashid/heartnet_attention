@@ -112,3 +112,21 @@ def heartnetTop(activation_function='relu', bn_momentum=0.99, bias=False, dropou
     output = Concatenate(axis=-1)([t1, t2, t3, t4])
     model = Model(input,output)
     return model
+
+
+def heartatten():
+
+    input = Input(shape=(2500, 1))
+
+    x1 = Conv1D(filters=16,kernel_size=32,strides=1)(input)
+    x1 = Activation(activation="relu")(x1)
+    x1 = BatchNormalization()(x1)
+    x1 = MaxPooling1D(pool_size=2)(x1)
+
+    x1 = Conv1D(filters=32,kernel_size=16,strides=1)(x1)
+    x1 = Activation(activation="relu")(x1)
+    x1 = BatchNormalization()(x1)
+    output = MaxPooling1D(pool_size=2)(x1)
+
+    model = Model(input,output)
+    return model
