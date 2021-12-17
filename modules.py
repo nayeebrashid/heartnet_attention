@@ -1,7 +1,7 @@
 import os
 from tensorflow.keras.layers import Input, Conv1D, MaxPooling1D, Dropout, Activation
 from tensorflow.keras import initializers
-from tensorflow.keras.layers.normalization import BatchNormalization
+from tensorflow.keras.layers import BatchNormalization
 from tensorflow.keras.layers.merge import Concatenate
 from tensorflow.keras.regularizers import l2
 from tensorflow.keras.constraints import max_norm
