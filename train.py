@@ -47,6 +47,7 @@ if __name__ == '__main__':
                         help = "Add comments to the log files")
     parser.add_argument("--type")
     parser.add_argument("--lr", type=float)
+    parser.add_argument("--datapath")
 
     args = parser.parse_args()
     print("%s selected" % (args.HS))
@@ -101,18 +102,19 @@ if __name__ == '__main__':
         lr= args.lr
     else:
         lr=0.0012843784
+    
 
 
     #########################################################
 
-    model_dir = os.path.join('/content/drive/MyDrive/Studies/BioMed Lab Project','models')
-    data_dir = os.path.join('/content/drive/MyDrive/Studies/BioMed Lab Project','data','feature','folds')
+    model_dir = os.path.join(args.datapath,'models')
+    data_dir = os.path.join(args.datapath,'data','feature','folds')
     log_name = HS + ' ' + str(datetime.now()).replace(':','-')
-    log_dir = os.path.join('/content/drive/MyDrive/Studies/BioMed Lab Project','logs')
+    log_dir = os.path.join(args.datapath,'logs')
     if not os.path.exists(os.path.join(model_dir,log_name)):
         os.makedirs(os.path.join(model_dir,log_name))
     checkpoint_name = os.path.join(model_dir,log_name,'weights.{epoch:04d}-{val_acc:.4f}.hdf5')
-    results_path = os.path.join('/content/drive/MyDrive/Studies/BioMed Lab Project','logs','resultsLog.csv')
+    results_path = os.path.join(args.datapath,'logs','resultsLog.csv')
 
     ### Init Params
 
