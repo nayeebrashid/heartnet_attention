@@ -1,13 +1,13 @@
 from __future__ import print_function, division, absolute_import
 import numpy as np
-from tensorflow.keras.preprocessing.image import Iterator
+from keras.preprocessing.image import Iterator
 from scipy import linalg
 from scipy.signal import resample
-import tensorflow.keras.backend as K
+import keras.backend as K
 import warnings
 from scipy.ndimage.interpolation import shift
 import threading
-from tensorflow.keras.utils import to_categorical
+from keras.utils import to_categorical
 
 
 class NumpyArrayIterator(Iterator):

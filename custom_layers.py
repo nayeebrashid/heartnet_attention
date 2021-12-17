@@ -1,10 +1,10 @@
 from __future__ import print_function, absolute_import, division
-from tensorflow.keras import backend as K
-from tensorflow.keras.engine.topology import Layer
-from tensorflow.keras.engine.topology import InputSpec
+from keras import backend as K
+from keras.engine.topology import Layer
+from keras.engine.topology import InputSpec
 import tensorflow as tf
-from tensorflow.keras.utils import conv_utils
-from tensorflow.keras.layers import activations, initializers, regularizers, constraints
+from keras.utils import conv_utils
+from keras.layers import activations, initializers, regularizers, constraints
 import numpy as np
 import warnings
 # from scipy.fftpack import dct

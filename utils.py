@@ -1,15 +1,15 @@
-from tensorflow.keras.callbacks import Callback
+from keras.callbacks import Callback
 import os
 import pandas as pd
 import numpy as np
-from tensorflow.keras import backend as K
+from keras import backend as K
 from sklearn.metrics import confusion_matrix,roc_auc_score,roc_curve
 import matplotlib.pyplot as plt
 import seaborn as sns
 from learnableFilterbanks import Conv1D_linearphase,DCT1D,Conv1D_linearphaseType,\
     Conv1D_gammatone,Conv1D_zerophase,Conv1D_linearphaseType_legacy
-from tensorflow.keras.utils import to_categorical
-from tensorflow.keras.models import model_from_json
+from keras.utils import to_categorical
+from keras.models import model_from_json
 import tables
 from scipy.io import loadmat
 from scipy.interpolate import interp1d

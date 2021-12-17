@@ -3,8 +3,8 @@ import numpy as np
 import os
 from keras.utils import to_categorical
 from sklearn.metrics import confusion_matrix
-from tensorflow.keras.callbacks import Callback
-from tensorflow.keras import backend as K
+from keras.callbacks import Callback
+from keras import backend as K
 
 class log_macc_LEGACY(Callback):
 
