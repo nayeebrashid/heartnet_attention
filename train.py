@@ -48,6 +48,7 @@ if __name__ == '__main__':
     parser.add_argument("--type")
     parser.add_argument("--lr", type=float)
     parser.add_argument("--datapath")
+    parser.add_argument("--datapath2")
 
     args = parser.parse_args()
     print("%s selected" % (args.HS))
@@ -107,14 +108,14 @@ if __name__ == '__main__':
 
     #########################################################
 
-    model_dir = os.path.join(args.datapath,'models')
+    model_dir = os.path.join(args.datapath2,'models')
     data_dir = os.path.join(args.datapath,'data','feature','folds')
     log_name = HS + ' ' + str(datetime.now()).replace(':','-')
-    log_dir = os.path.join(args.datapath,'logs')
+    log_dir = os.path.join(args.datapath2,'logs')
     if not os.path.exists(os.path.join(model_dir,log_name)):
         os.makedirs(os.path.join(model_dir,log_name))
     checkpoint_name = os.path.join(model_dir,log_name,'weights.{epoch:04d}-{val_acc:.4f}.hdf5')
-    results_path = os.path.join(args.datapath,'logs','resultsLog.csv')
+    results_path = os.path.join(args.datapath2,'logs','resultsLog.csv')
 
     ### Init Params
 
