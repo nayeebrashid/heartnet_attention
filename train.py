@@ -114,7 +114,7 @@ if __name__ == '__main__':
     log_dir = os.path.join(args.datapath2,'logs')
     if not os.path.exists(os.path.join(model_dir,log_name)):
         os.makedirs(os.path.join(model_dir,log_name))
-    checkpoint_name = os.path.join(model_dir,log_name,'weights.{epoch:04d}-{val_accuracy:.4f}.hdf5')
+    checkpoint_name = os.path.join(model_dir,log_name,'weights.{epoch:04d}.hdf5')
     results_path = os.path.join(args.datapath2,'logs','resultsLog.csv')
 
     ### Init Params
