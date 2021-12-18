@@ -114,7 +114,7 @@ if __name__ == '__main__':
     log_dir = os.path.join(args.datapath2,'logs')
     if not os.path.exists(os.path.join(model_dir,log_name)):
         os.makedirs(os.path.join(model_dir,log_name))
-    checkpoint_name = os.path.join(model_dir,log_name,'weights.{epoch:04d}-{val_acc:.4f}.hdf5')
+    checkpoint_name = os.path.join(model_dir,log_name,'weights.{epoch:04d}-{val_accuracy:.4f}.hdf5')
     results_path = os.path.join(args.datapath2,'logs','resultsLog.csv')
 
     ### Init Params
@@ -176,9 +176,9 @@ if __name__ == '__main__':
         json_file.write(model_json)
 
     modelcheckpnt = ModelCheckpoint(filepath=checkpoint_name,
-                                    monitor='val_acc', save_best_only=False,
+                                    monitor='loss', save_best_only=False,
                                     save_weights_only=False,
-                                    mode='max')
+                                    mode='min')
     tensbd = TensorBoard(log_dir=os.path.join(log_dir,log_name),
                          batch_size=batch_size,
                          write_images=False)
